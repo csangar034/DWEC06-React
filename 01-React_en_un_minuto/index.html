@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Agragar React en un minuto</title>
+  </head>
+  <body>
+
+    <h2>Agregar React en un minuto</h2>
+    <p>React puede ser añadido a una página sin herramientas de compilación.</p>
+    <p>Se carga como una etiqueta de script.</p>
+
+    <p>
+      Primer componente:
+      <!-- Pondremos el componente de React dentro de un div con clase like_button_container. También le añadimos un identificador, que permitirá encontrar el código desde javascript y visualizar el componente dento de él. -->
+      <div class="like_button_container" data-commentid="1"></div>
+    </p>
+
+    <p>
+      Segundo componente:
+      <!-- Pondremos el componente de React dentro de un div con clase like_button_container. -->
+      <div class="like_button_container" data-commentid="2"></div>
+    </p>
+
+    <p>
+      Tercer componente:
+      <!-- Pondremos el componente de React dentro de un div con clase like_button_container. -->
+      <div class="like_button_container" data-commentid="3"></div>
+    </p>
+
+    <!-- Carga de React. -->
+    <!-- Nota: Al desplegar, reemplazar "development.js" por "production.min.js". -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+
+    <!-- Cargamos el componente React. -->
+    <script src="like_button.js"></script>
+
+  </body>
+</html>
