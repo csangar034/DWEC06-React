@@ -45,6 +45,7 @@ element = (
       <p>Aquí tienes algunos enlaces para saber más de JSX:</p>
       <ul>
         <li><a href="https://es.reactjs.org/docs/introducing-jsx.html" target="_blank">[OFICIAL] Introduccion a JSX</a></li>
+        <li><a href="https://es.reactjs.org/docs/jsx-in-depth.html" target="_blank">[OFICIAL] JSX en profundidad</a></li>
         <li><a href="https://carlosazaustre.es/jsx-para-novatos" target="_blank">JSX para novatos</a></li>
         <li><a href="https://www.w3schools.com/react/react_jsx.asp" target="_blank">[W3Schools] React JSX</a></li>
         <li><a href="https://dev.to/sapardo/jsx-el-lenguaje-de-react-con-ejemplos-4hc2" target="_blank">Ejemplos JSX</a></li>
