@@ -102,7 +102,7 @@ const element = (
     <Mailbox unreadMessages={messages} />
     El renderizado condicional se puede implementar utilizando:
     <ul>
-      <li>Operador if (ver en Greeting</li>
+      <li>Operador if (ver en Greeting)</li>
       <li>Operador if-else (ver en el método render() de LoginControl)</li>
       <li>Operador lógico && en JSX (ver el componente Mailbox)</li>
       <li>Operador ternario [(condicion)? true : false ] en JSX</li>
