@@ -11,11 +11,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.lista_enlaces{
-  background-color: lightgrey;
-  border: 1px solid #555;
-  border-radius: 5px;
-  margin: 20px;
-  padding: 5px;
-}

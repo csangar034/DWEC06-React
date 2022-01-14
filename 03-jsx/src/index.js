@@ -3,8 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import logoAlberti from './logoAlberti.png';
 
+/*
+ * Codigo
+ */
+
 // CONSTANTES Y VARIABLES
-const name    = "Cristina"            // Variable con un texto
+const name    = "Cristina"          // Variable con un texto
 var user = {                        // Objeto que contiene información sobre un usuario
   name      : "Cristina",
   lastName  : "Sánchez",
@@ -20,7 +24,7 @@ function formatName(user){
 
 // Función que devuelve el saludo con el nombre de un usuario si se conoce o un texto genérico si no se conoce
 //user = "";
-function getGreeting(){
+function getGreeting(user){
   return (user) ? <span>{formatName(user)}</span> : <span>desconocido</span>;
 }
 
@@ -28,6 +32,7 @@ function getGreeting(){
 element = <h1>Hola {formatName(user)}</h1>
 
 // Paso 3: Variable JSX haciendo uso de una función con condicional
+//user = "";
 element = <h1>Hola {getGreeting(user)}</h1>
 
 // Paso 4: Si necesitamos poner atributos en JSX, podemos utilizar comillas. 
@@ -37,11 +42,18 @@ element = (
   <div tabIndex="0">
     <h1>Hola {getGreeting(user)}</h1>
     <img src={user.logo} alt="Logo del IES Rafael Alberti" />
+    <div>
+      Primero
+    </div>
+    <div>
+      Segundo
+    </div>
   </div>
 );
 
+
 element = (
-    <div>
+    <div class="lista_enlaces">
       <p>Aquí tienes algunos enlaces para saber más de JSX:</p>
       <ul>
         <li><a href="https://es.reactjs.org/docs/introducing-jsx.html" target="_blank">[OFICIAL] Introduccion a JSX</a></li>
