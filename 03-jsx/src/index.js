@@ -18,6 +18,7 @@ var user = {                        // Objeto que contiene información sobre un
   logo      : logoAlberti
 }
 var element = <h1>Hola {name}</h1>
+var element = <h1>Hola {2 + 3}</h1>
 
 // FUNCIONES
 // Función que devuelve el nombre completo de un usuario
@@ -54,7 +55,14 @@ element = (
   </div>
 );
 
+// Paso 5: Spread
+const imageProps = {
+  src: logoAlberti,
+  alt: "Página del IES Rafael Alberti"
+}
+element = <img {...imageProps} />
 
+/*
 element = (
     <div class="lista_enlaces">
       <p>Aquí tienes algunos enlaces para saber más de JSX:</p>
@@ -66,7 +74,7 @@ element = (
         <li><a href="https://dev.to/sapardo/jsx-el-lenguaje-de-react-con-ejemplos-4hc2" target="_blank">Ejemplos JSX</a></li>
       </ul>
     </div>
-);
+);*/
 
 // RENDERIZADO
 ReactDOM.render(
