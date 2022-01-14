@@ -24,11 +24,26 @@ ReactDOM.render(
 );
 
 // Paso 2: creamos un reloj, el cual se actualiza a cada segundo usando la función setInterval()
+
+// CONDICIONALES
+// Podemos evaluar condicionales de la manera que ya conocemos, con la ternaria...
+// ... o utilizar un nuevo operador que incorpora JSX: &&
+const parImpar = (num) => (
+  <span>
+    {(num % 2) ? "impar" : "par"}
+    {(num % 2 !== 0) && <strong>!!!!!</strong>}
+  </span>
+);
+
 function tick(){
+
+  let now = new Date();
+
   const element = (
     <div>
       <h1>Reloj</h1>
-      <h2>Son las {new Date().toLocaleTimeString()}.</h2>
+      <h2>Son las {now.toLocaleTimeString()}</h2>
+      <div>(Segundo: {parImpar(now.getSeconds())})</div>
       <hr/>
       <p><b>NOTA</b>: A tener en cuenta, estamos llamando a la función de renderizado una vez cada segundo, pero la forma correcta de hacer este reloj es llamando sólo 1 vez a la función render (lo veremos más adelante).</p>
       <ol>
@@ -41,6 +56,6 @@ function tick(){
   ReactDOM.render(element, document.getElementById("reloj"));
 }
 
-//setInterval(tick, 1000);
+setInterval(tick, 1000);
 
 
