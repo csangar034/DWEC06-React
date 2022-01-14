@@ -35,6 +35,30 @@ const parImpar = (num) => (
   </span>
 );
 
+// SWITCH
+const dayOfWeek = (day) => {
+  switch(day){
+    case 0: return <span>Domingo</span>;
+    case 1: return <span>Lunes</span>;
+    case 2: return <span>Martes</span>;
+    case 3: return <span>Miércoles</span>;
+    case 4: return <span>Jueves</span>;
+    case 5: return <span>Viernes</span>;
+    case 6: return <span>Sábado</span>;
+    default: return <span>'¡Desconocido!</span>;
+  }
+}
+
+const dayOfWeek2 = (day) => 
+  (day == 0) && <span>Domingo</span> || 
+  (day == 1) && <span>Lunes</span> || 
+  (day == 2) && <span>Martes</span> || 
+  (day == 3) && <span>Miércoles</span> || 
+  (day == 4) && <span>Jueves</span> || 
+  (day == 5) && <span>Viernes</span> || 
+  (day == 6) && <span>Sábado</span> || 
+  <span>¡Desconocido!</span>;
+
 function tick(){
 
   let now = new Date();
@@ -44,6 +68,8 @@ function tick(){
       <h1>Reloj</h1>
       <h2>Son las {now.toLocaleTimeString()}</h2>
       <div>(Segundo: {parImpar(now.getSeconds())})</div>
+      <div>Hoy es {dayOfWeek(now.getDay())}</div>
+      <div>Hoy es {dayOfWeek2(now.getDay())}</div>
       <hr/>
       <p><b>NOTA</b>: A tener en cuenta, estamos llamando a la función de renderizado una vez cada segundo, pero la forma correcta de hacer este reloj es llamando sólo 1 vez a la función render (lo veremos más adelante).</p>
       <ol>
@@ -57,5 +83,3 @@ function tick(){
 }
 
 setInterval(tick, 1000);
-
-
