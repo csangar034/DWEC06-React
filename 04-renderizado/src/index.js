@@ -5,12 +5,16 @@ import './index.css';
 // Paso 1: cómo funciona el renderizado en React
 var element = (
   <div>
+    <p><b>Render</b>: es un anglicismo que se puede traducir como "pintar"</p>
+    <p>¿Cómo funciona?</p>
     <ol>
       <li>Crea un proyecto react y quédate sólo con los ficheros src/index.css y src/index.js</li>
       <li>Inspecciona en el navegador tu código, hasta que encuentres la el nodo raíz (id=root)</li>
-      <li>Con React, tenemos un único nodo raíz, el cual se actualiza renderizándolo</li>
-      <li>Además, podremos tener tantos bloques diferentes como queramos, y actualizarlos independientemente unos de otros. El DOM de React es el que se encarga de ello.</li>
+      <li>Con React, tenemos un único nodo raíz, el cual se actualiza renderizándolo.</li>
+      <li>Además, podremos tener tantos bloques diferentes como queramos, y actualizarlos independientemente unos de otros. El DOM de React es el que se encarga de ello. Por esta razón, React es una librería perfecta para construir SPA.</li>
     </ol>
+    <hr/>
+    <div id="reloj"></div>
   </div>
 );
 
@@ -33,9 +37,10 @@ function tick(){
       </ol>
     </div>
   );
-  ReactDOM.render(element, document.getElementById("root"));
+  // Aquí, en vez de pintar cada segundo en el elemento root, selecciono el elemento "reloj", dejando el resto de la pantalla como estaba
+  ReactDOM.render(element, document.getElementById("reloj"));
 }
 
-setInterval(tick, 1000);
+//setInterval(tick, 1000);
 
 
