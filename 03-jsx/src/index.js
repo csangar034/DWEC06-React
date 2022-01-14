@@ -6,8 +6,8 @@ import logoAlberti from './logoAlberti.png';
 /*
  * A TENER EN CUENTA:
  * Las variables, se indican entre {corchetes} para utilizarlas
- * Se pueden haceer operaciones: {2 + 5} --> imprimiría 5
- * También podemos llamar a funciones()
+ * Se pueden haceer operaciones: {2 + 3} --> imprimiría 5
+ * También podemos llamar a {funciones()}
  */
 
 // CONSTANTES Y VARIABLES
@@ -18,7 +18,7 @@ var user = {                        // Objeto que contiene información sobre un
   logo      : logoAlberti
 }
 var element = <h1>Hola {name}</h1>
-var element = <h1>Hola {2 + 3}</h1>
+element = <h1>Hola {2 + 3}</h1>
 
 // FUNCIONES
 // Función que devuelve el nombre completo de un usuario
