@@ -4,7 +4,11 @@ import './index.css';
 import logoAlberti from './logoAlberti.png';
 
 /*
- * Codigo
+ * A TENER EN CUENTA:
+ * Las variables, se indican entre {corchetes} para utilizarlas
+ * Se pueden haceer operaciones: {2 + 5} --> imprimiría 5
+ * También podemos llamar a funciones()
+ * 
  */
 
 // CONSTANTES Y VARIABLES
