@@ -36,6 +36,7 @@ const parImpar = (num) => (
 );
 
 // SWITCH
+// Los switch los podemos hacer de la forma cásica que conocemos...
 const dayOfWeek = (day) => {
   switch(day){
     case 0: return <span>Domingo</span>;
@@ -49,6 +50,7 @@ const dayOfWeek = (day) => {
   }
 }
 
+// ... o con estructuras AND y OR, de tal manera que tendremos un comportamiento más compacto
 const dayOfWeek2 = (day) => 
   (day == 0) && <span>Domingo</span> || 
   (day == 1) && <span>Lunes</span> || 
@@ -58,6 +60,8 @@ const dayOfWeek2 = (day) =>
   (day == 5) && <span>Viernes</span> || 
   (day == 6) && <span>Sábado</span> || 
   <span>¡Desconocido!</span>;
+
+
 
 function tick(){
 
