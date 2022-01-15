@@ -58,7 +58,8 @@ element = (
 // Paso 5: Spread
 const imageProps = {
   src: logoAlberti,
-  alt: "Página del IES Rafael Alberti"
+  alt: "Página del IES Rafael Alberti",
+  width: "100px"
 }
 element = <img {...imageProps} />
 

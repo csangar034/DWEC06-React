@@ -46,7 +46,7 @@ const dayOfWeek = (day) => {
     case 4: return <span>Jueves</span>;
     case 5: return <span>Viernes</span>;
     case 6: return <span>Sábado</span>;
-    default: return <span>'¡Desconocido!</span>;
+    default: return <span>¡Desconocido!</span>;
   }
 }
 
