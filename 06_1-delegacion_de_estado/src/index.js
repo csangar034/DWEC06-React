@@ -82,6 +82,9 @@ const element = (
     </ul>
     </p>
     <p>¿Cuales son sus ventajas?</p>
+    <ul>
+      <li>Compartir el estado de un componente</li>
+    </ul>
     <hr/>
     <Board />
   </div>
