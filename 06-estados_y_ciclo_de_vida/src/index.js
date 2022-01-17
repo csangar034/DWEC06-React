@@ -44,6 +44,18 @@ class Clock extends React.Component {
 
 const element = (
   <div>
+    <h1>¿Qué es el <i>estado</i> en React?</h1>
+    <dl>
+      <dt><strong>Estado</strong></dt>
+      <dd>Es un conjunto de datos que definen al componente <u>internamente</u>. Cada vez que su estado cambia (al igual que ocurre con las props, el componente se renderiza.<br/>
+      ¿Cómo puedo manejar el estado?
+      <ol>
+        <li>A través de los Hooks (React 16.8+ <sub>2018</sub>): permite usar el estado y otras características sin escribir una clase.</li>
+        <li>useState() &rarr; es uno de los primeros Hooks que se implementaron. <i>[value, setValue] = useState(defaultValue)</i></li>
+      </ol>
+      </dd>
+    </dl>
+    <hr />
     <p>Para evitar que al hacer el reloj, tengamos que renderizar a cada segundo, vamos a añadir estados al componente Reloj, transformando este componente en una clase.</p>
     <p>Los pasos a seguir son:</p>
     <ol>

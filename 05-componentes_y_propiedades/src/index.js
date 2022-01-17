@@ -9,6 +9,7 @@ const user = {
 }
 
 // FUNCIONES
+// Componentes funcionales
 function Title(){
   return <h1>Componentes y propiedades</h1>
 }
@@ -24,7 +25,7 @@ function Definitions(){
       <dt><b>Componente</b></dt>
       <dd>Parte de la interfaz (Más información <a href="https://es.reactjs.org/docs/react-component.html">aquí</a>.). Por ejemplo, Title y Welcome son componentes de esta interfaz y son independientes entre sí. Se pueden comparar con las funciones JavaSciript.</dd>
       <dt><b>Propiedad</b></dt>
-      <dd>Argumentos que pasamos al componente a través de sus atributos. Por ejemplo, la función Welcome tiene la propiedad name y accedemos a ella igual que con un objeto.</dd>
+      <dd>Argumentos que pasamos al componente a través de sus atributos. Por ejemplo, la función Welcome tiene la propiedad name y accedemos a ella a través del objeto <i>props</i>.</dd>
     </dl>
   </div>);
 }
@@ -42,12 +43,34 @@ function CommentDate(){
   return <div class="commentDate">{thisDate.getDate()}/{thisDate.getMonth()}/{thisDate.getFullYear()}</div>
 }
 
-function Comment(props){
+// Componente de tipo clase, heredando/extendiendo de React.Component
+class Comment extends React.Component {
+  render(){
+    return (
+      <div className="Comment">
+        <CommentAuthor name={this.props.author.name} lastName={this.props.author.lastName}></CommentAuthor>
+        <CommentText></CommentText>
+        <CommentDate></CommentDate>
+      </div>
+    );
+  };
+}
+
+function HowItWorks(){
   return (
-    <div className="Comment">
-      <CommentAuthor name={props.author.name} lastName={props.author.lastName}></CommentAuthor>
-      <CommentText></CommentText>
-      <CommentDate></CommentDate>
+    <div>
+      <h1>¿Cómo funcionan?</h1>
+      <ol>
+        <li>Se declara el componente. Tenemos 2 formas de hacerlo:</li>
+        <ol>
+          <li>A través de funciones, lo que se denomina <i>componentes funcionales</i> (por ejemplo, el componente <i>HowItWorks()</i>)</li>
+          <li>A través de una clase ES6 de JavaScript, en este caso, debemos heredar de <i>React.Component</i> (por ejemplo, el componente <i>Comment</i>). En este caso, la clase Component se encarga de recibir las props y colocarlas en el objeto this para que estén disponibles en nuestro componente, sin tener que recibirlo como parámetro de entrada.</li>
+        </ol>
+        <li>A través de ReactDom.render(), llamamos al componente</li>
+        <li>Se ejecuta el componente y se sustituyen los valores de las props</li>
+        <li>Se devuelve un resultado</li>
+        <li>ReactDOM actualiza eficientemente el DOM con los nuevos valores</li>
+      </ol>
     </div>
   );
 }
@@ -62,11 +85,13 @@ const element = (
     <Welcome name={user.name}></Welcome>
     <Definitions></Definitions>
     <Comment author={user}></Comment>
+    <HowItWorks></HowItWorks>
     <hr/>
     <Footnote id="1" description="Los componentes son reutilizables, como ves en estas notas que estamos escribiendo."></Footnote>
     <Footnote id="2" description="Los componentes que tú crees siempre deben empezar con MAYÚSCULA, porque si empiezan por minúscula, React lo tomará como una etiqueta DOM."></Footnote>
     <Footnote id="3" description="Los componentes, pueden formar parte de otros componentes, mira el componente Comment"></Footnote>
     <Footnote id="4" description="Las funciones de un componente nunca deben modificar las entradas."></Footnote>
+    <Footnote id="5" description="Podemos llamar a multiples componentes dentro de un componente."></Footnote>
   </div>
 );
 
