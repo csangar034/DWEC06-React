@@ -100,6 +100,12 @@ const element = (
         <li>this.state no renderizará el componente, debemos utilizar this.setState()</li>
         <li>Las actualizaciones pueden ser asíncronas</li>
         <li>Las actualizaciones de estado se fusionan</li>
+        <li><b>Hooks</b>: Para resolver este ejemplo con componentes funcionales en lugar de clases, tendremos que:</li>
+        <ul>
+          <li>Crear los componentes funcionales</li>
+          <li>Utilizar el Hook useState para definir el estado del componente</li>
+          <li>Utilizar el Hook useEffect para controlar el ciclo de vida del componente</li>
+        </ul>
       </ul>
     </div>
   </div>
