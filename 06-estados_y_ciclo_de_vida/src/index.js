@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
 
 // Paso 1.1
+// Aquí tenemos un componente clase, el cual ya tiene incorporada la función useState
 class Clock extends React.Component {
   constructor(props) {
     // Paso 2.2
@@ -42,6 +43,16 @@ class Clock extends React.Component {
   }
 }
 
+// Si queremos utilizar el useState FUERA de una clase, necesitamos utilizar el HOOK useState. Recordar importarlo con -import React, { useState } from "react";-
+const Item = ({label}) => {
+  const [checked, setChecked] = useState(true);
+  return (
+    <p onClick={() => setChecked(!checked)}>
+      {checked ? 'Seleccionado' : 'Sin seleccionar'} {label}
+    </p>
+  );
+}
+
 const element = (
   <div>
     <h1>¿Qué es el <i>estado</i> en React?</h1>
@@ -55,6 +66,9 @@ const element = (
       </ol>
       </dd>
     </dl>
+    <center>
+      <Item />
+    </center>
     <hr />
     <p>Para evitar que al hacer el reloj, tengamos que renderizar a cada segundo, vamos a añadir estados al componente Reloj, transformando este componente en una clase.</p>
     <p>Los pasos a seguir son:</p>
