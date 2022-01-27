@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ReactDOM from 'react-dom';
 import './index.css';
+
+document.title = "Componentes de clase y funcionales";
 
 // Paso 1.1
 // Aquí tenemos un componente clase, el cual ya tiene incorporada la función useState
@@ -36,7 +38,7 @@ class Clock extends React.Component {
   render() {
     return (
       <div>
-        <h1>Reloj digital</h1>
+        <h1>Reloj digital (hecho con componente de clase)</h1>
         <h2>Son las {this.state.date.toLocaleTimeString()}.</h2>
       </div>
     );
@@ -44,14 +46,40 @@ class Clock extends React.Component {
 }
 
 // Si queremos utilizar el useState FUERA de una clase, necesitamos utilizar el HOOK useState. Recordar importarlo con -import React, { useState } from "react";-
-const Item = ({label}) => {
+const Item = () => {
+
   const [checked, setChecked] = useState(true);
+
   return (
     <p onClick={() => setChecked(!checked)}>
-      {checked ? 'Seleccionado' : 'Sin seleccionar'} {label}
+      {checked ? 'Seleccionado' : 'Sin seleccionar'}
     </p>
   );
+
 }
+
+// Reloj con un componente funcional
+const FunctionalClock = () => {
+
+  // Declaramos la variable de estado date
+  const [date, setDate] = useState(new Date());
+
+  // El Hook useEffect se ejecuta cuando el componente esté montado
+  useEffect(() => {
+    const interval = setInterval(
+      () => setDate(date => new Date()), 1000
+    );
+    return () => clearInterval(interval);
+  });
+
+  return (
+    <div>
+        <h1>Reloj digital (hecho con componente funcional)</h1>
+        <h2>Son las {date.toLocaleTimeString()}.</h2>
+      </div>
+  );
+}
+
 
 const element = (
   <div>
@@ -93,6 +121,8 @@ const element = (
       </ol>
     </ol>
     <Clock />
+    <hr/>
+    <FunctionalClock />
     <hr/>
     <div>
       A tener en cuenta del método setState()
