@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 
@@ -27,6 +27,40 @@ class Toggle extends React.Component {
   }
 }
 
+function EventDiv(){
+  const [mostrar, setMostrar] = useState(true);
+
+  return (
+    <div>
+      <button onClick={() => setMostrar(false)}>Dejar de mostrar</button>
+      { mostrar ? <MouseColor /> : null }
+    </div>
+  );
+}
+
+function MouseColor(){
+  const [color, setColor] = useState("orange");
+
+  useEffect(() => {
+    function onMouseMove(evento){
+      if(evento.clientX < window.innerWidth / 2){
+        setColor("orange");
+      }
+      else{
+        setColor("blue");
+      }
+    }
+
+    window.addEventListener("mousemove", onMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", onMouseMove);
+    }
+  });
+
+  return <div style={{height: "100px", background: color}} />;
+}
+
 const element = (
   <div>
     <h1>Eventos</h1>
@@ -39,6 +73,8 @@ const element = (
       </ul>
     </div>
     <Toggle />
+    <hr/>
+    <EventDiv />
   </div>
 );
 
