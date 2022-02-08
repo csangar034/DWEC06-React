@@ -66,8 +66,7 @@ const FunctionalClock = () => {
 
   // El Hook useEffect se ejecuta cuando el componente esté montado
   useEffect(() => {
-    const interval = setInterval(
-      () => setDate(date => new Date()), 1000
+    const interval = setInterval(() => setDate(date => new Date()), 1000
     );
     return () => clearInterval(interval);
   });
