@@ -84,6 +84,7 @@ const Formulario = () => {
     apellido: ''
   })
 
+  // Función que se ejecuta cada vez que un valor cambia a través del evento onChange
   const handleInputChange = (event) => {
     //console.log(event.target.value);
     setDatos({
@@ -92,6 +93,7 @@ const Formulario = () => {
     })
   }
 
+  // Función para gestionar el submit
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(datos.nombre + " " + datos.apellido)
