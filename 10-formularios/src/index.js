@@ -9,7 +9,7 @@ class MyForm extends React.Component {
     this.state = {
       name: "",
       accepted: "checked",
-      numberOfGuests: 2
+      age: 18
     };
 
     this.handleInputChange = this.handleInputChange.bind(this);
@@ -18,10 +18,10 @@ class MyForm extends React.Component {
 
   // Este método se ejecutará cuando algún elemento del formulario cambie su valor, luego, con el método setState() actualizaremos su estado
   handleInputChange(event) {
-    //console.log(event.target.value);
-    const target = event.target;
-    const value = target.type === 'checkbox' ? target.checked : target.value;
-    const name = target.name;
+    console.log(event.target.value);
+    const target  = event.target;
+    const value   = target.type === 'checkbox' ? target.checked : target.value;
+    const name    = target.name;
 
     this.setState({
       [name]: value
@@ -63,9 +63,9 @@ class MyForm extends React.Component {
             <label>
               Edad:
               <input
-                name="numberOfGuests"
+                name="age"
                 type="number"
-                value={this.state.numberOfGuests}
+                value={this.state.age}
                 onChange={this.handleInputChange} />
             </label>
           </div>
@@ -96,7 +96,7 @@ const Formulario = () => {
   // Función para gestionar el submit
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(datos.nombre + " " + datos.apellido)
+    console.log(datos.nombre + " " + datos.apellido);
   }
 
   return(
