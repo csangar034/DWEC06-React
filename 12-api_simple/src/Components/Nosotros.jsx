@@ -8,9 +8,9 @@ const Nosotros = () => {
   }, [])
   
   const obtenerDatos =  async () => {
-    const data = await fetch('https://jsonplaceholder.typicode.com/users')
-    const usuarios= await data.json()
-    setUsers(usuarios)
+    const data = await fetch('https://jsonplaceholder.typicode.com/users');
+    const usuarios= await data.json();
+    setUsers(usuarios);
   }
 
   return <div>
