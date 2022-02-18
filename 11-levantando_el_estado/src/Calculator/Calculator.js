@@ -1,18 +1,31 @@
 import React from 'react';
+import TemperatureInput from './TemperatureInput.js'
 
-const scaleNames = {
-  c: 'Celsius',
-  f: 'Fahrenheit'
-};
-  
+/**
+ * Función para calcular la conversión de Fahrenheit a Celsius
+ * 
+ * @param {*} fahrenheit 
+ * @returns {*}
+ */
 function toCelsius(fahrenheit) {
   return (fahrenheit - 32) * 5 / 9;
 }
-  
+
+/**
+ * Función para calcular la conversión de Celsius a Fahrenheit
+ * @param {*} celsius 
+ * @returns {*} 
+ */
 function toFahrenheit(celsius) {
   return (celsius * 9 / 5) + 32;
 }
-  
+
+/**
+ * Convierte fahrenheit a celsius o viceversa
+ * @param {*} temperature 
+ * @param {*} convert 
+ * @returns 
+ */
 function tryConvert(temperature, convert) {
   const input = parseFloat(temperature);
   if (Number.isNaN(input)) {
@@ -24,7 +37,12 @@ function tryConvert(temperature, convert) {
   
   return rounded.toString();
 }
-  
+
+/**
+ * Determina a qué temperatura hierve el agua en celsius
+ * @param {*} props 
+ * @returns 
+ */
 function BoilingVerdict(props) {
   if (props.celsius >= 100) {
     return <p>El agua herviría</p>;
@@ -32,31 +50,10 @@ function BoilingVerdict(props) {
   
   return <p>El agua <strong>no</strong> herviría</p>;
 }
-  
-class TemperatureInput extends React.Component {
-  constructor(props) {
-    super(props);
-    this.handleChange = this.handleChange.bind(this);
-  }
-  
-  handleChange(e) {
-    this.props.onTemperatureChange(e.target.value);
-  }
-  
-  render() {
-    const temperature = this.props.temperature;
-    const scale = this.props.scale;
-  
-    return (
-      <fieldset>
-        <legend>Temperatura en {scaleNames[scale]}:</legend>
-        <input value={temperature}
-               onChange={this.handleChange} />
-      </fieldset>
-    );
-  }
-}
-  
+
+/**
+ * CLASS Calculator
+ */
 class Calculator extends React.Component {
   constructor(props) {
     super(props);
@@ -65,10 +62,18 @@ class Calculator extends React.Component {
         this.state = {temperature: '', scale: 'c'};
   }
   
+  /**
+   * Manejador calcular la conversión de grados celsius
+   * @param {*} temperature 
+   */
   handleCelsiusChange(temperature) {
     this.setState({scale: 'c', temperature});
   }
   
+  /**
+   * Manejador calcular la conversión de grados fahrenheit
+   * @param {*} temperature 
+   */
   handleFahrenheitChange(temperature) {
     this.setState({scale: 'f', temperature});
   }
@@ -96,4 +101,4 @@ class Calculator extends React.Component {
   }
 }
 
-  export default Calculator;
+export default Calculator;
