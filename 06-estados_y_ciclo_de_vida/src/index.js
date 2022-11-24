@@ -75,7 +75,7 @@ const FunctionalClock = () => {
     <div>
         <h1>Reloj digital (hecho con componente funcional)</h1>
         <h2>Son las {date.toLocaleTimeString()}.</h2>
-      </div>
+    </div>
   );
 }
 
