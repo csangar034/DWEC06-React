@@ -10,11 +10,11 @@ function App() {
 
   const handlerClick = () => {
     setNumClics(numClics + 1);
-  }
+  };
 
   const restartCounter = () => {
     setNumClics(0);
-  }
+  };
 
   return (
     <div className="App">
