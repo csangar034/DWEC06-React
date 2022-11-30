@@ -1,7 +1,7 @@
 import React from 'react';
 import '../css/Boton.css';
 
-function Boton({ txt , isClick, handlerClick}){
+function Boton({ txt , isClick, handlerClick }){
     return (
         <button
             className={ isClick ? 'boton-click' : 'boton-reiniciar' }
