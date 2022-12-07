@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 const Nosotros = () => {
-  const [users, setUsers] = React.useState([])
+  const [users, setUsers] = useState([])
  
-  React.useEffect(() => {
+  useEffect(() => {
     obtenerDatos();
   }, [])
   
